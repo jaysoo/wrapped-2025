@@ -31,12 +31,12 @@ export function OrcaHighlights({ activeSection }) {
               key={i}
               className="bg-zinc-800/50 rounded-xl p-4 text-center hover:bg-zinc-800 hover:scale-105 transition-all border border-zinc-700/50"
               style={{
-                animation: activeSection === 28 ? `orcaGridPop 0.4s ease-out ${0.1 + i * 0.08}s both` : 'none',
+                animation: activeSection === 24 ? `orcaGridPop 0.4s ease-out ${0.1 + i * 0.08}s both` : 'none',
               }}
             >
               <span
                 className="text-2xl mb-2 block"
-                style={{ animation: activeSection === 28 ? `orcaIconWiggle 0.6s ease-out ${0.3 + i * 0.08}s both` : 'none' }}
+                style={{ animation: activeSection === 24 ? `orcaIconWiggle 0.6s ease-out ${0.3 + i * 0.08}s both` : 'none' }}
               >{item.icon}</span>
               <p className="text-sm font-medium">{item.name}</p>
             </div>
@@ -72,12 +72,12 @@ export function InfraHighlights({ activeSection }) {
               key={i}
               className="bg-zinc-800/50 rounded-xl p-4 text-center hover:bg-zinc-800 hover:scale-105 transition-all border border-zinc-700/50"
               style={{
-                animation: activeSection === 29 ? `infraSlideUp 0.5s ease-out ${0.1 + i * 0.07}s both` : 'none',
+                animation: activeSection === 25 ? `infraSlideUp 0.5s ease-out ${0.1 + i * 0.07}s both` : 'none',
               }}
             >
               <span
                 className="text-2xl mb-2 block"
-                style={{ animation: activeSection === 29 ? `infraIconGrow 0.4s ease-out ${0.25 + i * 0.07}s both` : 'none' }}
+                style={{ animation: activeSection === 25 ? `infraIconGrow 0.4s ease-out ${0.25 + i * 0.07}s both` : 'none' }}
               >{item.icon}</span>
               <p className="text-sm font-medium">{item.name}</p>
             </div>
@@ -113,12 +113,12 @@ export function RedPandaHighlights({ activeSection }) {
               key={i}
               className="bg-zinc-800/50 rounded-xl p-4 text-center hover:bg-zinc-800 hover:scale-105 transition-all border border-zinc-700/50"
               style={{
-                animation: activeSection === 30 ? `pandaFlipIn 0.5s ease-out ${0.1 + i * 0.1}s both` : 'none',
+                animation: activeSection === 26 ? `pandaFlipIn 0.5s ease-out ${0.1 + i * 0.1}s both` : 'none',
               }}
             >
               <span
                 className="text-2xl mb-2 block"
-                style={{ animation: activeSection === 30 ? `pandaIconSpin 0.6s ease-out ${0.3 + i * 0.1}s both` : 'none' }}
+                style={{ animation: activeSection === 26 ? `pandaIconSpin 0.6s ease-out ${0.3 + i * 0.1}s both` : 'none' }}
               >{item.icon}</span>
               <p className="text-sm font-medium">{item.name}</p>
             </div>
@@ -313,7 +313,7 @@ export function TopContributors({ activeSection }) {
 }
 
 export function Closing({ activeSection }) {
-  const isActive = activeSection === 35;
+  const isActive = activeSection === 27;
   return (
     <Section className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 relative overflow-hidden">
       <Fireworks isActive={isActive} />

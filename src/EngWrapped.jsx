@@ -11,7 +11,6 @@ import {
   AnimatedNumber,
   AnimatedTeamCount,
   Section,
-  TeamCard,
   Starfield,
   Fireworks,
   HealingWave,
@@ -25,11 +24,7 @@ import {
   OrcaHighlights,
   InfraHighlights,
   RedPandaHighlights,
-  StatsIntro,
   ProjectsShowcaseSection,
-  ProjectsBreakdown,
-  LOCStats,
-  TopContributors,
   Closing,
 } from "./sections";
 import "./keyframes.css";
@@ -555,779 +550,10 @@ export default function EngWrapped() {
 
       <ProjectsShowcaseSection activeSection={activeSection} />
 
-      {/* Team Shakeup Intro */}
-      <Section className="bg-zinc-900">
-        <div className="text-center max-w-3xl relative px-4">
-          <p className="text-zinc-400 text-sm uppercase tracking-wider mb-4">
-            Meanwhile...
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
-            Teams Were Shuffling
-          </h2>
-          <div className="relative h-48 mb-8">
-            {/* Musical chairs animation */}
-            {["👨‍💻", "👩‍💻", "🧑‍💻", "👨‍💼"].map((emoji, i) => (
-              <div
-                key={i}
-                className="absolute text-5xl"
-                style={{
-                  left: "50%",
-                  top: "50%",
-                  animation: `orbit ${3 + i * 0.5}s linear infinite`,
-                  animationDelay: `${i * 0.75}s`,
-                }}
-              >
-                {emoji}
-              </div>
-            ))}
-            {/* Center element */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div
-                className="text-6xl"
-                style={{ animation: "pulse 2s ease-in-out infinite" }}
-              >
-                🔀
-              </div>
-            </div>
-            {/* Floating question marks */}
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={`q-${i}`}
-                className="absolute text-2xl text-zinc-600"
-                style={{
-                  left: `${15 + i * 14}%`,
-                  top: `${20 + (i % 2) * 60}%`,
-                  animation: `float ${2 + i * 0.3}s ease-in-out infinite`,
-                  animationDelay: `${i * 0.2}s`,
-                }}
-              >
-                ?
-              </div>
-            ))}
-          </div>
-          <p className="text-zinc-400 text-lg">
-            New teams, new missions, new energy
-          </p>
-        </div>
-      </Section>
-
-      {/* Red Panda Team Formation */}
-      <Section className="bg-zinc-950">
-        <div className="text-center max-w-4xl px-4">
-          <p
-            className="text-zinc-400 text-sm uppercase tracking-wider mb-2"
-            style={{
-              animation:
-                activeSection === 4 ? "fadeInDown 0.5s ease-out both" : "none",
-            }}
-          >
-            New in 2025
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8"
-            style={{
-              animation:
-                activeSection === 4
-                  ? "fadeInDown 0.5s ease-out 0.1s both"
-                  : "none",
-            }}
-          >
-            <span className="text-orange-400">🐼 Red Panda</span> Team Formed
-          </h2>
-          <div className="flex flex-col items-center gap-4 md:gap-6 mb-6 md:mb-8">
-            {/* Desktop horizontal layout */}
-            <div className="hidden md:flex items-center justify-center gap-8">
-              <div
-                className="text-center flex-shrink-0"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "slideInLeft 0.6s ease-out 0.2s both"
-                      : "none",
-                }}
-              >
-                <p className="text-zinc-500 text-sm mb-3">From Nx CLI</p>
-                <div className="flex gap-3">
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-blue-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.4s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/jonathan-cammisuli.avif"
-                      alt="Jon"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">Jon</p>
-                  </div>
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-blue-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.5s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/james-henry.avif"
-                      alt="James"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">James</p>
-                  </div>
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-blue-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.6s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/max-kless.avif"
-                      alt="Max"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">Max</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="text-4xl text-orange-400 flex-shrink-0"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "arrowPulse 0.5s ease-out 0.6s both, arrowBounce 1s ease-in-out 1.1s infinite"
-                      : "none",
-                }}
-              >
-                →
-              </div>
-              <img
-                src="redpanda.png"
-                alt="Red Panda team"
-                className="w-72 rounded-xl shadow-2xl border border-orange-500/50 flex-shrink-0"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "centerPop 0.6s ease-out 0.3s both, glowPulse 2s ease-in-out 0.9s infinite"
-                      : "none",
-                }}
-              />
-              <div
-                className="text-4xl text-orange-400 flex-shrink-0"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "arrowPulse 0.5s ease-out 0.6s both, arrowBounce 1s ease-in-out 1.1s infinite"
-                      : "none",
-                }}
-              >
-                ←
-              </div>
-              <div
-                className="text-center flex-shrink-0"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "slideInRight 0.6s ease-out 0.2s both"
-                      : "none",
-                }}
-              >
-                <p className="text-zinc-500 text-sm mb-3">From Nx Cloud</p>
-                <div className="flex gap-3">
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-purple-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.4s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/altan-stalker.avif"
-                      alt="Altan"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">Altan</p>
-                  </div>
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-purple-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.5s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/mark-lindsey.avif"
-                      alt="Mark"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">Mark</p>
-                  </div>
-                  <div
-                    className="bg-zinc-800 rounded-xl p-3 border border-purple-500/30"
-                    style={{
-                      animation:
-                        activeSection === 4
-                          ? "personPop 0.4s ease-out 0.6s both"
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src="https://nx.dev/images/team/benjamin-cabanes.avif"
-                      alt="Ben"
-                      className="w-12 h-12 rounded-full mb-2 mx-auto object-cover"
-                    />
-                    <p className="text-sm font-medium">Ben</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Mobile vertical layout */}
-            <div className="flex md:hidden flex-col items-center gap-4">
-              <img
-                src="redpanda.png"
-                alt="Red Panda team"
-                className="w-48 sm:w-56 rounded-xl shadow-2xl border border-orange-500/50"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "centerPop 0.6s ease-out 0.3s both, glowPulse 2s ease-in-out 0.9s infinite"
-                      : "none",
-                }}
-              />
-              <div
-                className="text-2xl text-orange-400"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "arrowPulse 0.5s ease-out 0.6s both, arrowBounceVertical 1s ease-in-out 1.1s infinite"
-                      : "none",
-                }}
-              >
-                ↑
-              </div>
-              <div className="flex flex-wrap justify-center gap-4">
-                <div className="text-center">
-                  <p className="text-zinc-500 text-xs mb-2">From Nx CLI</p>
-                  <div className="flex gap-2">
-                    {[
-                      {
-                        name: "Jon",
-                        photo:
-                          "https://nx.dev/images/team/jonathan-cammisuli.avif",
-                      },
-                      {
-                        name: "James",
-                        photo: "https://nx.dev/images/team/james-henry.avif",
-                      },
-                      {
-                        name: "Max",
-                        photo: "https://nx.dev/images/team/max-kless.avif",
-                      },
-                    ].map((p, i) => (
-                      <div
-                        key={i}
-                        className="bg-zinc-800 rounded-lg p-2 border border-blue-500/30"
-                      >
-                        <img
-                          src={p.photo}
-                          alt={p.name}
-                          className="w-10 h-10 rounded-full mb-1 mx-auto object-cover"
-                        />
-                        <p className="text-xs font-medium">{p.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <p className="text-zinc-500 text-xs mb-2">From Nx Cloud</p>
-                  <div className="flex gap-2">
-                    {[
-                      {
-                        name: "Altan",
-                        photo: "https://nx.dev/images/team/altan-stalker.avif",
-                      },
-                      {
-                        name: "Mark",
-                        photo: "https://nx.dev/images/team/mark-lindsey.avif",
-                      },
-                      {
-                        name: "Ben",
-                        photo:
-                          "https://nx.dev/images/team/benjamin-cabanes.avif",
-                      },
-                    ].map((p, i) => (
-                      <div
-                        key={i}
-                        className="bg-zinc-800 rounded-lg p-2 border border-purple-500/30"
-                      >
-                        <img
-                          src={p.photo}
-                          alt={p.name}
-                          className="w-10 h-10 rounded-full mb-1 mx-auto object-cover"
-                        />
-                        <p className="text-xs font-medium">{p.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="text-2xl md:text-4xl text-orange-400"
-              style={{
-                animation:
-                  activeSection === 4
-                    ? "arrowPulse 0.5s ease-out 0.7s both, arrowBounceVertical 1s ease-in-out 1.2s infinite"
-                    : "none",
-              }}
-            >
-              ↑
-            </div>
-            <div
-              className="text-center"
-              style={{
-                animation:
-                  activeSection === 4
-                    ? "slideInUp 0.6s ease-out 0.3s both"
-                    : "none",
-              }}
-            >
-              <div
-                className="bg-zinc-800 rounded-xl p-2 md:p-3 border border-orange-500/30"
-                style={{
-                  animation:
-                    activeSection === 4
-                      ? "personPop 0.4s ease-out 0.8s both"
-                      : "none",
-                }}
-              >
-                <img
-                  src="https://nx.dev/images/team/victor-savkin.avif"
-                  alt="Victor"
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full mb-1 md:mb-2 mx-auto"
-                />
-                <p className="text-xs md:text-sm font-medium">Victor</p>
-              </div>
-              <p className="text-zinc-500 text-xs md:text-sm mt-2">
-                Leading the charge
-              </p>
-            </div>
-          </div>
-          <p
-            className="text-zinc-400 text-sm md:text-base"
-            style={{
-              animation:
-                activeSection === 4
-                  ? "fadeInUp 0.5s ease-out 0.9s both"
-                  : "none",
-            }}
-          >
-            A new team focused on Self-Healing CI
-          </p>
-        </div>
-      </Section>
-
-      {/* Orca Introduction */}
-      <Section className="bg-zinc-900">
-        <div className="text-center max-w-4xl px-4">
-          <p className="text-zinc-400 text-sm uppercase tracking-wider mb-2">
-            Also in 2025...
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
-            Nx Cloud became{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, #7c3aed, #c084fc, #e9d5ff, #7c3aed)",
-                backgroundSize: "200% 100%",
-                animation: "gradientShift 3s ease-in-out infinite",
-              }}
-            >
-              Orca
-            </span>
-          </h2>
-          <p className="text-zinc-400 text-base md:text-lg mb-6 md:mb-8">
-            The team building the future of CI.
-          </p>
-          <img
-            src="orca.png"
-            alt="Go Team Orca!"
-            className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-lg rounded-xl shadow-2xl"
-            style={{
-              animation: "float 3s ease-in-out infinite",
-            }}
-          />
-        </div>
-      </Section>
-
-      {/* Meet the Teams */}
-      <Section className="bg-zinc-950">
-        <div className="max-w-5xl w-full px-4">
-          <h2
-            className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-center"
-            style={{
-              animation:
-                activeSection === 6 ? "titleReveal 0.6s ease-out both" : "none",
-            }}
-          >
-            Meet the Teams
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
-            {/* Infrastructure */}
-            <div
-              className="bg-zinc-900 rounded-xl md:rounded-2xl p-3 md:p-5 border-l-4 hover:scale-[1.02] transition-transform"
-              style={{
-                borderColor: teamColors.infrastructure,
-                animation:
-                  activeSection === 6
-                    ? "cardFlipIn 0.5s ease-out 0.1s both"
-                    : "none",
-              }}
-            >
-              <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-                <div
-                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
-                  style={{
-                    backgroundColor: teamColors.infrastructure,
-                    animation:
-                      activeSection === 6
-                        ? "dotPing 0.4s ease-out 0.4s both"
-                        : "none",
-                  }}
-                />
-                <h3 className="text-base md:text-lg font-bold">
-                  Infrastructure
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                {[
-                  {
-                    name: "Steve",
-                    photo: "https://nx.dev/images/team/steve-pentland.avif",
-                  },
-                  {
-                    name: "Patrick",
-                    photo: "https://nx.dev/images/team/patrick-mariglia.avif",
-                  },
-                  {
-                    name: "Szymon",
-                    photo:
-                      "https://nx.dev/images/team/szymon-wojciechowski.avif",
-                  },
-                ].map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center"
-                    style={{
-                      animation:
-                        activeSection === 6
-                          ? `photoPopIn 0.4s ease-out ${0.5 + i * 0.1}s both`
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src={p.photo}
-                      alt={p.name}
-                      className="w-8 h-8 md:w-12 md:h-12 rounded-full object-cover border-2 border-zinc-700 hover:border-green-500 transition-colors"
-                    />
-                    <span className="text-xs text-zinc-400 mt-1">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Nx CLI */}
-            <div
-              className="bg-zinc-900 rounded-xl md:rounded-2xl p-3 md:p-5 border-l-4 hover:scale-[1.02] transition-transform"
-              style={{
-                borderColor: teamColors.cli,
-                animation:
-                  activeSection === 6
-                    ? "cardFlipIn 0.5s ease-out 0.2s both"
-                    : "none",
-              }}
-            >
-              <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-                <div
-                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
-                  style={{
-                    backgroundColor: teamColors.cli,
-                    animation:
-                      activeSection === 6
-                        ? "dotPing 0.4s ease-out 0.5s both"
-                        : "none",
-                  }}
-                />
-                <h3 className="text-base md:text-lg font-bold">Nx CLI</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                {[
-                  {
-                    name: "Jason",
-                    photo: "https://nx.dev/images/team/jason-jean.avif",
-                  },
-                  {
-                    name: "Colum",
-                    photo: "https://nx.dev/images/team/colum-ferry.avif",
-                  },
-                  {
-                    name: "Leosvel",
-                    photo:
-                      "https://nx.dev/images/team/leosvel-perez-espinosa.avif",
-                  },
-                  {
-                    name: "Jack",
-                    photo: "https://nx.dev/images/team/jack-hsu.avif",
-                  },
-                  {
-                    name: "Craigory",
-                    photo: "https://nx.dev/images/team/craigory-coppola.avif",
-                  },
-                ].map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center"
-                    style={{
-                      animation:
-                        activeSection === 6
-                          ? `photoPopIn 0.4s ease-out ${0.6 + i * 0.08}s both`
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src={p.photo}
-                      alt={p.name}
-                      className="w-8 h-8 md:w-12 md:h-12 rounded-full object-cover border-2 border-zinc-700 hover:border-blue-500 transition-colors"
-                    />
-                    <span className="text-xs text-zinc-400 mt-1">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Orca */}
-            <div
-              className="bg-zinc-900 rounded-2xl p-4 md:p-5 border-l-4 hover:scale-[1.02] transition-transform"
-              style={{
-                borderColor: teamColors.cloud,
-                animation:
-                  activeSection === 6
-                    ? "cardFlipIn 0.5s ease-out 0.3s both"
-                    : "none",
-              }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{
-                    backgroundColor: teamColors.cloud,
-                    animation:
-                      activeSection === 6
-                        ? "dotPing 0.4s ease-out 0.6s both"
-                        : "none",
-                  }}
-                />
-                <h3 className="text-lg font-bold">Orca</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                {[
-                  {
-                    name: "Nicole",
-                    photo: "https://nx.dev/images/team/nicole-oliver.avif",
-                  },
-                  {
-                    name: "Chau",
-                    photo: "https://nx.dev/images/team/chau-tran.avif",
-                  },
-                  {
-                    name: "Louie",
-                    photo: "https://nx.dev/images/team/louie-weng.avif",
-                  },
-                  {
-                    name: "Rares",
-                    photo: "https://nx.dev/images/team/rares-matei.avif",
-                  },
-                  {
-                    name: "Dillon",
-                    photo: "https://nx.dev/images/team/dillon-chanis.avif",
-                  },
-                ].map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center"
-                    style={{
-                      animation:
-                        activeSection === 6
-                          ? `photoPopIn 0.4s ease-out ${0.7 + i * 0.08}s both`
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src={p.photo}
-                      alt={p.name}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-zinc-700 hover:border-purple-500 transition-colors"
-                    />
-                    <span className="text-xs text-zinc-400 mt-1">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Red Panda */}
-            <div
-              className="bg-zinc-900 rounded-2xl p-4 md:p-5 border-l-4 hover:scale-[1.02] transition-transform"
-              style={{
-                borderColor: teamColors.redpanda,
-                animation:
-                  activeSection === 6
-                    ? "cardFlipIn 0.5s ease-out 0.4s both"
-                    : "none",
-              }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{
-                    backgroundColor: teamColors.redpanda,
-                    animation:
-                      activeSection === 6
-                        ? "dotPing 0.4s ease-out 0.7s both"
-                        : "none",
-                  }}
-                />
-                <h3 className="text-lg font-bold">Red Panda</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                {[
-                  {
-                    name: "Victor",
-                    photo: "https://nx.dev/images/team/victor-savkin.avif",
-                  },
-                  {
-                    name: "Jon",
-                    photo: "https://nx.dev/images/team/jonathan-cammisuli.avif",
-                  },
-                  {
-                    name: "James",
-                    photo: "https://nx.dev/images/team/james-henry.avif",
-                  },
-                  {
-                    name: "Altan",
-                    photo: "https://nx.dev/images/team/altan-stalker.avif",
-                  },
-                  {
-                    name: "Mark",
-                    photo: "https://nx.dev/images/team/mark-lindsey.avif",
-                  },
-                  {
-                    name: "Ben",
-                    photo: "https://nx.dev/images/team/benjamin-cabanes.avif",
-                  },
-                  {
-                    name: "Max",
-                    photo: "https://nx.dev/images/team/max-kless.avif",
-                  },
-                ].map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center"
-                    style={{
-                      animation:
-                        activeSection === 6
-                          ? `photoPopIn 0.4s ease-out ${0.8 + i * 0.08}s both`
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src={p.photo}
-                      alt={p.name}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-zinc-700 hover:border-orange-500 transition-colors"
-                    />
-                    <span className="text-xs text-zinc-400 mt-1">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Documentation */}
-            <div
-              className="bg-zinc-900 rounded-2xl p-4 md:p-5 border-l-4 hover:scale-[1.02] transition-transform md:col-span-2 md:justify-self-center md:w-1/2"
-              style={{
-                borderColor: teamColors.docs,
-                animation:
-                  activeSection === 6
-                    ? "cardFlipIn 0.5s ease-out 1.7s both"
-                    : "none",
-              }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{
-                    backgroundColor: teamColors.docs,
-                    animation:
-                      activeSection === 6
-                        ? "dotPing 0.4s ease-out 2.0s both"
-                        : "none",
-                  }}
-                />
-                <h3 className="text-lg font-bold">Documentation</h3>
-                <span className="text-xs text-zinc-500 bg-zinc-800 px-2 py-0.5 rounded-full">
-                  part-time
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                {[
-                  {
-                    name: "Jack",
-                    photo: "https://nx.dev/images/team/jack-hsu.avif",
-                  },
-                  {
-                    name: "Caleb",
-                    photo: "https://nx.dev/images/team/caleb-ukle.avif",
-                  },
-                ].map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center"
-                    style={{
-                      animation:
-                        activeSection === 6
-                          ? `photoPopIn 0.4s ease-out ${2.1 + i * 0.1}s both`
-                          : "none",
-                    }}
-                  >
-                    <img
-                      src={p.photo}
-                      alt={p.name}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-zinc-700 hover:border-pink-500 transition-colors"
-                    />
-                    <span className="text-xs text-zinc-400 mt-1">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* Big Features Intro */}
       <Section className="bg-zinc-950">
         <div className="text-center max-w-2xl px-4">
-          <RocketLaunch isActive={activeSection === 7} />
+          <RocketLaunch isActive={activeSection === 3} />
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
             Big Features
           </h2>
@@ -1370,19 +596,19 @@ export default function EngWrapped() {
             className="flex justify-center mb-8 relative"
             style={{
               animation:
-                activeSection === 8
+                activeSection === 4
                   ? "healingImageZoom 0.6s ease-out 0.1s both"
                   : "none",
             }}
           >
-            <HealingWave isActive={activeSection === 8} />
+            <HealingWave isActive={activeSection === 4} />
             <img
               src="self-healing-ci.webp"
               alt="Self-Healing CI workflow: Submit PR → CI fails → AI fix → Verify → Approve"
               className="max-w-3xl w-full rounded-xl relative z-10"
               style={{
                 animation:
-                  activeSection === 8
+                  activeSection === 4
                     ? "healingGlow 2s ease-in-out 0.5s infinite"
                     : "none",
               }}
@@ -1393,7 +619,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 8
+                  activeSection === 4
                     ? "healingBadge 0.4s ease-out 0.6s both"
                     : "none",
               }}
@@ -1405,7 +631,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 8
+                  activeSection === 4
                     ? "healingBadge 0.4s ease-out 0.8s both"
                     : "none",
               }}
@@ -1417,7 +643,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 8
+                  activeSection === 4
                     ? "healingBadge 0.4s ease-out 1.0s both"
                     : "none",
               }}
@@ -1462,18 +688,18 @@ export default function EngWrapped() {
             className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-2xl relative"
             style={{
               animation:
-                activeSection === 9
+                activeSection === 5
                   ? "terminalWindowPop 0.5s ease-out 0.1s both, rumble 0.3s ease-out 0.1s"
                   : "none",
             }}
           >
-            <CRTOverlay isActive={activeSection === 9} />
+            <CRTOverlay isActive={activeSection === 5} />
             <div className="flex items-center gap-2 mb-4 relative z-10">
               <div
                 className="w-3 h-3 rounded-full bg-red-500"
                 style={{
                   animation:
-                    activeSection === 9
+                    activeSection === 5
                       ? "terminalDot 0.3s ease-out 0.3s both"
                       : "none",
                 }}
@@ -1482,7 +708,7 @@ export default function EngWrapped() {
                 className="w-3 h-3 rounded-full bg-yellow-500"
                 style={{
                   animation:
-                    activeSection === 9
+                    activeSection === 5
                       ? "terminalDot 0.3s ease-out 0.4s both"
                       : "none",
                 }}
@@ -1491,7 +717,7 @@ export default function EngWrapped() {
                 className="w-3 h-3 rounded-full bg-green-500"
                 style={{
                   animation:
-                    activeSection === 9
+                    activeSection === 5
                       ? "terminalDot 0.3s ease-out 0.5s both"
                       : "none",
                 }}
@@ -1500,13 +726,13 @@ export default function EngWrapped() {
                 className="text-zinc-500 text-sm ml-2 font-mono"
                 style={{
                   animation:
-                    activeSection === 9
+                    activeSection === 5
                       ? "terminalType 0.6s ease-out 0.6s both"
                       : "none",
                 }}
               >
                 nx run-many -t e2e
-                <BlinkingCursor isActive={activeSection === 9} />
+                <BlinkingCursor isActive={activeSection === 5} />
               </span>
             </div>
             <div className="text-left font-mono text-sm space-y-2 relative z-10">
@@ -1514,7 +740,7 @@ export default function EngWrapped() {
                 className="flex items-center gap-3"
                 style={{
                   animation:
-                    activeSection === 9
+                    activeSection === 5
                       ? "terminalLine 0.4s ease-out 0.8s both"
                       : "none",
                 }}
@@ -1530,7 +756,7 @@ export default function EngWrapped() {
                     className="text-zinc-500 flex items-center gap-2"
                     style={{
                       animation:
-                        activeSection === 9
+                        activeSection === 5
                           ? "terminalLine 0.3s ease-out 1.0s both"
                           : "none",
                     }}
@@ -1542,7 +768,7 @@ export default function EngWrapped() {
                     className="text-zinc-500 flex items-center gap-2"
                     style={{
                       animation:
-                        activeSection === 9
+                        activeSection === 5
                           ? "terminalLine 0.3s ease-out 1.1s both"
                           : "none",
                     }}
@@ -1555,7 +781,7 @@ export default function EngWrapped() {
                     className="text-zinc-500 flex items-center gap-2"
                     style={{
                       animation:
-                        activeSection === 9
+                        activeSection === 5
                           ? "terminalLine 0.3s ease-out 1.2s both"
                           : "none",
                     }}
@@ -1568,7 +794,7 @@ export default function EngWrapped() {
                     className="text-zinc-400 flex items-center gap-2"
                     style={{
                       animation:
-                        activeSection === 9
+                        activeSection === 5
                           ? "terminalLine 0.3s ease-out 1.3s both"
                           : "none",
                     }}
@@ -1582,7 +808,7 @@ export default function EngWrapped() {
                   className="bg-zinc-800/50 rounded p-3 border border-zinc-700"
                   style={{
                     animation:
-                      activeSection === 9
+                      activeSection === 5
                         ? "terminalPanelSlide 0.5s ease-out 1.0s both"
                         : "none",
                   }}
@@ -1604,7 +830,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 9
+                  activeSection === 5
                     ? "terminalBadge 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -1616,7 +842,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 9
+                  activeSection === 5
                     ? "terminalBadge 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -1628,7 +854,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 9
+                  activeSection === 5
                     ? "terminalBadge 0.3s ease-out 0.8s both"
                     : "none",
               }}
@@ -1673,7 +899,7 @@ export default function EngWrapped() {
               className="w-1/2 rounded-xl border border-zinc-800 shadow-2xl"
               style={{
                 animation:
-                  activeSection === 10
+                  activeSection === 6
                     ? "migrateImagePop 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -1684,7 +910,7 @@ export default function EngWrapped() {
               className="w-1/2 rounded-xl border border-zinc-800 shadow-2xl"
               style={{
                 animation:
-                  activeSection === 10
+                  activeSection === 6
                     ? "migrateImagePop 0.5s ease-out 0.3s both"
                     : "none",
               }}
@@ -1695,7 +921,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 10
+                  activeSection === 6
                     ? "migrateBadge 0.3s ease-out 0.5s both"
                     : "none",
               }}
@@ -1707,7 +933,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 10
+                  activeSection === 6
                     ? "migrateBadge 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -1719,7 +945,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 10
+                  activeSection === 6
                     ? "migrateBadge 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -1764,7 +990,7 @@ export default function EngWrapped() {
                 className="flex-1 rounded-xl border border-zinc-800 shadow-2xl overflow-hidden"
                 style={{
                   animation:
-                    activeSection === 11
+                    activeSection === 7
                       ? "graphSlideLeft 0.5s ease-out 0.1s both"
                       : "none",
                 }}
@@ -1784,7 +1010,7 @@ export default function EngWrapped() {
                 className="flex-1 rounded-xl border border-zinc-800 shadow-2xl overflow-hidden"
                 style={{
                   animation:
-                    activeSection === 11
+                    activeSection === 7
                       ? "graphSlideRight 0.5s ease-out 0.3s both"
                       : "none",
                 }}
@@ -1805,7 +1031,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 11
+                  activeSection === 7
                     ? "graphBadge 0.3s ease-out 0.5s both"
                     : "none",
               }}
@@ -1817,7 +1043,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 11
+                  activeSection === 7
                     ? "graphBadge 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -1829,7 +1055,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 11
+                  activeSection === 7
                     ? "graphBadge 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -1885,7 +1111,7 @@ export default function EngWrapped() {
               className="sm:w-1/2 aspect-[3/2] rounded-xl border border-zinc-800 overflow-hidden"
               style={{
                 animation:
-                  activeSection === 12
+                  activeSection === 8
                     ? "contVideoSlide 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -1900,7 +1126,7 @@ export default function EngWrapped() {
               className="sm:w-1/2 aspect-[3/2] bg-zinc-900 rounded-xl p-3 md:p-5 border border-zinc-800 text-left font-mono text-xs md:text-sm overflow-auto"
               style={{
                 animation:
-                  activeSection === 12
+                  activeSection === 8
                     ? "contCodeSlide 0.5s ease-out 0.3s both"
                     : "none",
               }}
@@ -1909,7 +1135,7 @@ export default function EngWrapped() {
                 className="text-zinc-500 mb-2"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 0.5s both"
                       : "none",
                 }}
@@ -1920,7 +1146,7 @@ export default function EngWrapped() {
                 className="text-zinc-300"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 0.6s both"
                       : "none",
                 }}
@@ -1933,7 +1159,7 @@ export default function EngWrapped() {
                 className="text-zinc-300 mt-2"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 0.7s both"
                       : "none",
                 }}
@@ -1942,7 +1168,7 @@ export default function EngWrapped() {
                 className="text-zinc-300 pl-4"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 0.8s both"
                       : "none",
                 }}
@@ -1953,7 +1179,7 @@ export default function EngWrapped() {
                 className="text-zinc-300 pl-4"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 0.9s both"
                       : "none",
                 }}
@@ -1966,7 +1192,7 @@ export default function EngWrapped() {
                 className="text-zinc-300"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 1.0s both"
                       : "none",
                 }}
@@ -1975,7 +1201,7 @@ export default function EngWrapped() {
                 className="text-zinc-300 mt-2"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 1.1s both"
                       : "none",
                 }}
@@ -1984,7 +1210,7 @@ export default function EngWrapped() {
                 className="text-zinc-300 pl-4"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 1.2s both"
                       : "none",
                 }}
@@ -1997,7 +1223,7 @@ export default function EngWrapped() {
                 className="text-zinc-300"
                 style={{
                   animation:
-                    activeSection === 12
+                    activeSection === 8
                       ? "contCodeLine 0.3s ease-out 1.3s both"
                       : "none",
                 }}
@@ -2009,7 +1235,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 12
+                  activeSection === 8
                     ? "contBadge 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -2021,7 +1247,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 12
+                  activeSection === 8
                     ? "contBadge 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -2033,7 +1259,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 12
+                  activeSection === 8
                     ? "contBadge 0.3s ease-out 0.8s both"
                     : "none",
               }}
@@ -2079,7 +1305,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-8 border border-zinc-800 text-center w-36 sm:w-44 md:w-52"
               style={{
                 animation:
-                  activeSection === 13
+                  activeSection === 9
                     ? "cardSlideUp 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -2090,7 +1316,7 @@ export default function EngWrapped() {
                 className="h-12 md:h-16 mx-auto mb-3 md:mb-4 object-contain"
                 style={{
                   animation:
-                    activeSection === 13
+                    activeSection === 9
                       ? "logoBounce 0.6s ease-out 0.3s both"
                       : "none",
                 }}
@@ -2106,7 +1332,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-8 border border-zinc-800 text-center w-36 sm:w-44 md:w-52"
               style={{
                 animation:
-                  activeSection === 13
+                  activeSection === 9
                     ? "cardSlideUp 0.5s ease-out 0.25s both"
                     : "none",
               }}
@@ -2117,7 +1343,7 @@ export default function EngWrapped() {
                 className="h-12 md:h-16 mx-auto mb-3 md:mb-4 object-contain invert brightness-200"
                 style={{
                   animation:
-                    activeSection === 13
+                    activeSection === 9
                       ? "logoBounce 0.6s ease-out 0.45s both"
                       : "none",
                 }}
@@ -2164,7 +1390,7 @@ export default function EngWrapped() {
             className="bg-zinc-950 rounded-xl p-6 border border-zinc-800"
             style={{
               animation:
-                activeSection === 14
+                activeSection === 10
                   ? "terminalSlideIn 0.5s ease-out 0.1s both"
                   : "none",
             }}
@@ -2179,7 +1405,7 @@ export default function EngWrapped() {
                   className="text-zinc-300"
                   style={{
                     animation:
-                      activeSection === 14
+                      activeSection === 10
                         ? "typeCommand 0.8s steps(24) 0.4s both"
                         : "none",
                   }}
@@ -2191,7 +1417,7 @@ export default function EngWrapped() {
                 <div
                   style={{
                     animation:
-                      activeSection === 14
+                      activeSection === 10
                         ? "outputFade 0.3s ease-out 0.9s both"
                         : "none",
                   }}
@@ -2202,7 +1428,7 @@ export default function EngWrapped() {
                   className="text-green-400"
                   style={{
                     animation:
-                      activeSection === 14
+                      activeSection === 10
                         ? "checkPop 0.4s ease-out 1.2s both"
                         : "none",
                   }}
@@ -2213,7 +1439,7 @@ export default function EngWrapped() {
                   className="text-green-400"
                   style={{
                     animation:
-                      activeSection === 14
+                      activeSection === 10
                         ? "checkPop 0.4s ease-out 1.4s both"
                         : "none",
                   }}
@@ -2224,7 +1450,7 @@ export default function EngWrapped() {
                   className="text-green-400"
                   style={{
                     animation:
-                      activeSection === 14
+                      activeSection === 10
                         ? "checkPop 0.4s ease-out 1.6s both"
                         : "none",
                   }}
@@ -2239,7 +1465,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 14
+                  activeSection === 10
                     ? "badgeFade 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -2251,7 +1477,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 14
+                  activeSection === 10
                     ? "badgeFade 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -2263,7 +1489,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 14
+                  activeSection === 10
                     ? "badgeFade 0.3s ease-out 0.8s both"
                     : "none",
               }}
@@ -2319,7 +1545,7 @@ export default function EngWrapped() {
               style={{
                 maxWidth: "480px",
                 animation:
-                  activeSection === 15
+                  activeSection === 11
                     ? "slideFromLeft 0.6s ease-out 0.1s both, dashboardGlow 2s ease-in-out 0.7s infinite"
                     : "none",
               }}
@@ -2335,7 +1561,7 @@ export default function EngWrapped() {
               style={{
                 maxWidth: "480px",
                 animation:
-                  activeSection === 15
+                  activeSection === 11
                     ? "slideFromRight 0.6s ease-out 0.3s both, dashboardGlowCyan 2s ease-in-out 0.9s infinite"
                     : "none",
               }}
@@ -2352,7 +1578,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 15
+                  activeSection === 11
                     ? "metricSlide 0.4s ease-out 0.5s both"
                     : "none",
               }}
@@ -2364,7 +1590,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 15
+                  activeSection === 11
                     ? "metricSlide 0.4s ease-out 0.7s both"
                     : "none",
               }}
@@ -2376,7 +1602,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 15
+                  activeSection === 11
                     ? "metricSlide 0.4s ease-out 0.9s both"
                     : "none",
               }}
@@ -2418,7 +1644,7 @@ export default function EngWrapped() {
             className="bg-zinc-950 rounded-xl p-6 border border-zinc-800"
             style={{
               animation:
-                activeSection === 16
+                activeSection === 12
                   ? "listContainerFade 0.4s ease-out 0.1s both"
                   : "none",
             }}
@@ -2428,7 +1654,7 @@ export default function EngWrapped() {
                 className="flex items-center justify-between p-3 bg-zinc-900 rounded-lg"
                 style={{
                   animation:
-                    activeSection === 16
+                    activeSection === 12
                       ? "flakeRowSlide 0.5s ease-out 0.2s both"
                       : "none",
                 }}
@@ -2438,7 +1664,7 @@ export default function EngWrapped() {
                     className="text-yellow-400"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "warningPulse 0.6s ease-out 0.4s both"
                           : "none",
                     }}
@@ -2452,7 +1678,7 @@ export default function EngWrapped() {
                     className="text-red-400 font-bold"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "percentPop 0.4s ease-out 0.5s both"
                           : "none",
                     }}
@@ -2466,7 +1692,7 @@ export default function EngWrapped() {
                 className="flex items-center justify-between p-3 bg-zinc-900 rounded-lg"
                 style={{
                   animation:
-                    activeSection === 16
+                    activeSection === 12
                       ? "flakeRowSlide 0.5s ease-out 0.4s both"
                       : "none",
                 }}
@@ -2476,7 +1702,7 @@ export default function EngWrapped() {
                     className="text-yellow-400"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "warningPulse 0.6s ease-out 0.6s both"
                           : "none",
                     }}
@@ -2490,7 +1716,7 @@ export default function EngWrapped() {
                     className="text-orange-400 font-bold"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "percentPop 0.4s ease-out 0.7s both"
                           : "none",
                     }}
@@ -2504,7 +1730,7 @@ export default function EngWrapped() {
                 className="flex items-center justify-between p-3 bg-zinc-900 rounded-lg"
                 style={{
                   animation:
-                    activeSection === 16
+                    activeSection === 12
                       ? "flakeRowSlide 0.5s ease-out 0.6s both"
                       : "none",
                 }}
@@ -2514,7 +1740,7 @@ export default function EngWrapped() {
                     className="text-green-400"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "checkBounce 0.5s ease-out 0.8s both"
                           : "none",
                     }}
@@ -2528,7 +1754,7 @@ export default function EngWrapped() {
                     className="text-green-400 font-bold"
                     style={{
                       animation:
-                        activeSection === 16
+                        activeSection === 12
                           ? "percentPop 0.4s ease-out 0.9s both"
                           : "none",
                     }}
@@ -2545,7 +1771,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 16
+                  activeSection === 12
                     ? "featureFade 0.3s ease-out 0.5s both"
                     : "none",
               }}
@@ -2557,7 +1783,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 16
+                  activeSection === 12
                     ? "featureFade 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -2569,7 +1795,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 16
+                  activeSection === 12
                     ? "featureFade 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -2616,7 +1842,7 @@ export default function EngWrapped() {
               className="absolute top-10 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-purple-500 via-purple-400 to-green-500"
               style={{
                 animation:
-                  activeSection === 17
+                  activeSection === 13
                     ? "lineGrow 1s ease-out 0.5s both"
                     : "none",
                 transformOrigin: "left",
@@ -2626,7 +1852,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 17
+                  activeSection === 13
                     ? "stepSlideIn 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -2635,7 +1861,7 @@ export default function EngWrapped() {
                 className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
                 style={{
                   animation:
-                    activeSection === 17
+                    activeSection === 13
                       ? "numberPop 0.4s ease-out 0.3s both"
                       : "none",
                 }}
@@ -2651,7 +1877,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 17
+                  activeSection === 13
                     ? "stepSlideIn 0.5s ease-out 0.3s both"
                     : "none",
               }}
@@ -2660,7 +1886,7 @@ export default function EngWrapped() {
                 className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
                 style={{
                   animation:
-                    activeSection === 17
+                    activeSection === 13
                       ? "numberPop 0.4s ease-out 0.5s both"
                       : "none",
                 }}
@@ -2674,7 +1900,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 17
+                  activeSection === 13
                     ? "stepSlideIn 0.5s ease-out 0.5s both"
                     : "none",
               }}
@@ -2683,7 +1909,7 @@ export default function EngWrapped() {
                 className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
                 style={{
                   animation:
-                    activeSection === 17
+                    activeSection === 13
                       ? "checkmarkPop 0.5s ease-out 0.7s both"
                       : "none",
                 }}
@@ -2728,7 +1954,7 @@ export default function EngWrapped() {
             className="rounded-xl overflow-hidden border border-zinc-700 shadow-2xl"
             style={{
               animation:
-                activeSection === 18
+                activeSection === 14
                   ? "dashboardSlideIn 0.6s ease-out both"
                   : "none",
             }}
@@ -2739,7 +1965,7 @@ export default function EngWrapped() {
               className="w-full"
               style={{
                 animation:
-                  activeSection === 18
+                  activeSection === 14
                     ? "dashboardFadeIn 0.8s ease-out 0.3s both"
                     : "none",
               }}
@@ -2750,7 +1976,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 18
+                  activeSection === 14
                     ? "featureFade 0.3s ease-out 0.5s both"
                     : "none",
               }}
@@ -2761,7 +1987,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 18
+                  activeSection === 14
                     ? "featureFade 0.3s ease-out 0.6s both"
                     : "none",
               }}
@@ -2772,7 +1998,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 18
+                  activeSection === 14
                     ? "featureFade 0.3s ease-out 0.7s both"
                     : "none",
               }}
@@ -2816,7 +2042,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-8 border border-zinc-800 text-center w-28 sm:w-36 md:w-48"
               style={{
                 animation:
-                  activeSection === 19
+                  activeSection === 15
                     ? "cloudFloat 0.6s ease-out 0.1s both"
                     : "none",
               }}
@@ -2832,7 +2058,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-8 border border-zinc-800 text-center w-28 sm:w-36 md:w-48 ring-2 ring-green-500"
               style={{
                 animation:
-                  activeSection === 19
+                  activeSection === 15
                     ? "cloudFloat 0.6s ease-out 0.2s both, azurePulse 2s ease-in-out 0.8s infinite"
                     : "none",
               }}
@@ -2848,7 +2074,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-8 border border-zinc-800 text-center w-28 sm:w-36 md:w-48"
               style={{
                 animation:
-                  activeSection === 19
+                  activeSection === 15
                     ? "cloudFloat 0.6s ease-out 0.3s both"
                     : "none",
               }}
@@ -2896,7 +2122,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-auto"
               style={{
                 animation:
-                  activeSection === 20
+                  activeSection === 16
                     ? "helmSpin 0.6s ease-out 0.1s both"
                     : "none",
               }}
@@ -2905,7 +2131,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-3xl mb-2 md:mb-3"
                 style={{
                   animation:
-                    activeSection === 20
+                    activeSection === 16
                       ? "iconRotate 0.8s ease-out 0.3s both"
                       : "none",
                 }}
@@ -2923,7 +2149,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-auto"
               style={{
                 animation:
-                  activeSection === 20
+                  activeSection === 16
                     ? "helmSpin 0.6s ease-out 0.2s both"
                     : "none",
               }}
@@ -2932,7 +2158,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-3xl mb-2 md:mb-3"
                 style={{
                   animation:
-                    activeSection === 20
+                    activeSection === 16
                       ? "iconRotate 0.8s ease-out 0.4s both"
                       : "none",
                 }}
@@ -2950,7 +2176,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-auto"
               style={{
                 animation:
-                  activeSection === 20
+                  activeSection === 16
                     ? "helmSpin 0.6s ease-out 0.3s both"
                     : "none",
               }}
@@ -2959,7 +2185,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-3xl mb-2 md:mb-3"
                 style={{
                   animation:
-                    activeSection === 20
+                    activeSection === 16
                       ? "iconRotate 0.8s ease-out 0.5s both"
                       : "none",
                 }}
@@ -3010,7 +2236,7 @@ export default function EngWrapped() {
               style={{
                 maxWidth: "900px",
                 animation:
-                  activeSection === 21
+                  activeSection === 17
                     ? "dashboardReveal 0.8s ease-out 0.2s both"
                     : "none",
               }}
@@ -3027,7 +2253,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 21
+                  activeSection === 17
                     ? "tagFadeIn 0.4s ease-out 0.6s both"
                     : "none",
               }}
@@ -3039,7 +2265,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 21
+                  activeSection === 17
                     ? "tagFadeIn 0.4s ease-out 0.7s both"
                     : "none",
               }}
@@ -3051,7 +2277,7 @@ export default function EngWrapped() {
               className="text-zinc-400"
               style={{
                 animation:
-                  activeSection === 21
+                  activeSection === 17
                     ? "tagFadeIn 0.4s ease-out 0.8s both"
                     : "none",
               }}
@@ -3095,7 +2321,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 22
+                  activeSection === 18
                     ? "dockerSlide 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -3104,7 +2330,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-4"
                 style={{
                   animation:
-                    activeSection === 22
+                    activeSection === 18
                       ? "iconWobble 0.6s ease-out 0.3s both"
                       : "none",
                 }}
@@ -3123,7 +2349,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 22
+                  activeSection === 18
                     ? "dockerSlide 0.5s ease-out 0.25s both"
                     : "none",
               }}
@@ -3132,7 +2358,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-4"
                 style={{
                   animation:
-                    activeSection === 22
+                    activeSection === 18
                       ? "iconWobble 0.6s ease-out 0.45s both"
                       : "none",
                 }}
@@ -3196,7 +2422,7 @@ export default function EngWrapped() {
               className="w-full md:flex-1 bg-zinc-950 rounded-xl p-4 md:p-6 border border-zinc-800"
               style={{
                 animation:
-                  activeSection === 23
+                  activeSection === 19
                     ? "panelSlideLeft 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -3209,7 +2435,7 @@ export default function EngWrapped() {
                   className="text-zinc-400"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.4s both"
                         : "none",
                   }}
@@ -3220,7 +2446,7 @@ export default function EngWrapped() {
                   className="text-yellow-300 underline"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.5s both"
                         : "none",
                   }}
@@ -3231,7 +2457,7 @@ export default function EngWrapped() {
                   className="text-zinc-500"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.55s both"
                         : "none",
                   }}
@@ -3242,7 +2468,7 @@ export default function EngWrapped() {
                   className="text-zinc-500"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.6s both"
                         : "none",
                   }}
@@ -3253,7 +2479,7 @@ export default function EngWrapped() {
                   className="text-zinc-500"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.65s both"
                         : "none",
                   }}
@@ -3264,7 +2490,7 @@ export default function EngWrapped() {
                   className="text-zinc-500"
                   style={{
                     animation:
-                      activeSection === 23
+                      activeSection === 19
                         ? "typeIn 0.3s ease-out 0.7s both"
                         : "none",
                   }}
@@ -3277,7 +2503,7 @@ export default function EngWrapped() {
               className="w-full md:flex-1 rounded-xl border border-zinc-800 overflow-hidden"
               style={{
                 animation:
-                  activeSection === 23
+                  activeSection === 19
                     ? "panelSlideRight 0.5s ease-out 0.2s both"
                     : "none",
               }}
@@ -3327,7 +2553,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 24
+                  activeSection === 20
                     ? "nodePopIn 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -3336,7 +2562,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-3"
                 style={{
                   animation:
-                    activeSection === 24
+                    activeSection === 20
                       ? "nodePulse 0.6s ease-out 0.3s both"
                       : "none",
                 }}
@@ -3353,7 +2579,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 24
+                  activeSection === 20
                     ? "nodePopIn 0.5s ease-out 0.25s both"
                     : "none",
               }}
@@ -3362,7 +2588,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-3"
                 style={{
                   animation:
-                    activeSection === 24
+                    activeSection === 20
                       ? "nodePulse 0.6s ease-out 0.45s both"
                       : "none",
                 }}
@@ -3420,7 +2646,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 25
+                  activeSection === 21
                     ? "stabilitySlide 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -3429,7 +2655,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-4"
                 style={{
                   animation:
-                    activeSection === 25
+                    activeSection === 21
                       ? "shieldPulse 0.8s ease-out 0.3s both"
                       : "none",
                 }}
@@ -3444,7 +2670,7 @@ export default function EngWrapped() {
               className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 text-center flex-1 max-w-xs"
               style={{
                 animation:
-                  activeSection === 25
+                  activeSection === 21
                     ? "stabilitySlide 0.5s ease-out 0.25s both"
                     : "none",
               }}
@@ -3453,7 +2679,7 @@ export default function EngWrapped() {
                 className="text-4xl mb-4"
                 style={{
                   animation:
-                    activeSection === 25
+                    activeSection === 21
                       ? "shieldPulse 0.8s ease-out 0.45s both"
                       : "none",
                 }}
@@ -3500,7 +2726,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-48"
               style={{
                 animation:
-                  activeSection === 26
+                  activeSection === 22
                     ? "fadeInUp 0.5s ease-out 0.1s both"
                     : "none",
               }}
@@ -3509,7 +2735,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-4xl mb-2 md:mb-4"
                 style={{
                   animation:
-                    activeSection === 26
+                    activeSection === 22
                       ? "iconBounce 0.5s ease-out 0.3s both"
                       : "none",
                 }}
@@ -3530,7 +2756,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-48"
               style={{
                 animation:
-                  activeSection === 26
+                  activeSection === 22
                     ? "fadeInUp 0.5s ease-out 0.2s both"
                     : "none",
               }}
@@ -3539,7 +2765,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-4xl mb-2 md:mb-4"
                 style={{
                   animation:
-                    activeSection === 26
+                    activeSection === 22
                       ? "iconBounce 0.5s ease-out 0.4s both"
                       : "none",
                 }}
@@ -3558,7 +2784,7 @@ export default function EngWrapped() {
               className="bg-zinc-950 rounded-xl p-4 md:p-6 border border-zinc-800 text-center w-28 sm:w-36 md:w-48"
               style={{
                 animation:
-                  activeSection === 26
+                  activeSection === 22
                     ? "fadeInUp 0.5s ease-out 0.3s both"
                     : "none",
               }}
@@ -3567,7 +2793,7 @@ export default function EngWrapped() {
                 className="text-2xl md:text-4xl mb-2 md:mb-4"
                 style={{
                   animation:
-                    activeSection === 26
+                    activeSection === 22
                       ? "iconBounce 0.5s ease-out 0.5s both"
                       : "none",
                 }}
@@ -3619,7 +2845,7 @@ export default function EngWrapped() {
                 className="bg-zinc-800/50 rounded-xl p-4 text-center hover:bg-zinc-800 hover:scale-105 transition-all border border-zinc-700/50"
                 style={{
                   animation:
-                    activeSection === 27
+                    activeSection === 23
                       ? `gridItemPop 0.4s ease-out ${0.1 + i * 0.08}s both`
                       : "none",
                 }}
@@ -3628,7 +2854,7 @@ export default function EngWrapped() {
                   className="text-2xl mb-2 block"
                   style={{
                     animation:
-                      activeSection === 27
+                      activeSection === 23
                         ? `iconBounce 0.5s ease-out ${0.3 + i * 0.08}s both`
                         : "none",
                   }}
@@ -3645,10 +2871,6 @@ export default function EngWrapped() {
       <OrcaHighlights activeSection={activeSection} />
       <InfraHighlights activeSection={activeSection} />
       <RedPandaHighlights activeSection={activeSection} />
-      <StatsIntro activeSection={activeSection} />
-      <ProjectsBreakdown activeSection={activeSection} />
-      <LOCStats activeSection={activeSection} />
-      <TopContributors activeSection={activeSection} />
       <Closing activeSection={activeSection} />
     </div>
   );

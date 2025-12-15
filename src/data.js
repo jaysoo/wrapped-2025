@@ -130,39 +130,31 @@ export const slideDurations = [
   2600,  // 0: Hero
   3600,  // 1: Big Numbers
   5600,  // 2: Projects Showcase (animated)
-  3300,  // 3: Team Shakeup Intro
-  3700,  // 4: Red Panda Team Formation
-  2900,  // 5: Orca Introduction
-  4100,  // 6: Meet the Teams
-  2900,  // 7: Big Features Intro
-  2400,  // 8: Self-Healing CI
-  2400,  // 9: Terminal UI
-  2400,  // 10: Migrate UI
-  2400,  // 11: Improved Nx Graph
-  2400,  // 12: Continuous Tasks
-  2400,  // 13: .NET + Maven
-  2400,  // 14: AI Code Generation
-  2400,  // 15: CPU/Memory Tracking
-  2400,  // 16: Flaky Task Analytics
-  2400,  // 17: Onboarding Flow
-  2400,  // 18: Enterprise Usage UI
-  2400,  // 19: Azure Single Tenant
-  2400,  // 20: Helm Chart
-  2400,  // 21: Observability
-  2400,  // 22: Docker + Nx Release
-  2400,  // 23: GitHub Templates
-  2400,  // 24: Node 24
-  2400,  // 25: Nx & Ocean CI Stability
-  2400,  // 26: Docs Migration to Astro Starlight
-  2400,  // 27: Framework Support
-  2400,  // 28: Orca Highlights
-  2400,  // 29: Infrastructure Highlights
-  2400,  // 30: Red Panda Highlights
-  2900,  // 31: Stats Intro
-  2900,  // 32: Projects Breakdown
-  3700,  // 33: LOC Stats
-  3700,  // 34: Top Contributors Chart
-  2900,  // 35: Closing
+  2900,  // 3: Big Features Intro
+  2400,  // 4: Self-Healing CI
+  2400,  // 5: Terminal UI
+  2400,  // 6: Migrate UI
+  2400,  // 7: Improved Nx Graph
+  2400,  // 8: Continuous Tasks
+  2400,  // 9: .NET + Maven
+  2400,  // 10: AI Code Generation
+  2400,  // 11: CPU/Memory Tracking
+  2400,  // 12: Flaky Task Analytics
+  2400,  // 13: Onboarding Flow
+  2400,  // 14: Enterprise Usage UI
+  2400,  // 15: Azure Single Tenant
+  2400,  // 16: Helm Chart
+  2400,  // 17: Observability
+  2400,  // 18: Docker + Nx Release
+  2400,  // 19: GitHub Templates
+  2400,  // 20: Node 24
+  2400,  // 21: Nx & Ocean CI Stability
+  2400,  // 22: Docs Migration to Astro Starlight
+  2400,  // 23: Framework Support
+  2400,  // 24: Orca Highlights
+  2400,  // 25: Infrastructure Highlights
+  2400,  // 26: Red Panda Highlights
+  2900,  // 27: Closing
 ];
 
 export const sectionCount = slideDurations.length;
