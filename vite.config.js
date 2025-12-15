@@ -26,5 +26,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/eng-wrapped/',
+  base: '/nx-wrapped-2025/',
 })
