@@ -576,7 +576,7 @@ export default function EngWrapped() {
             </p>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Jon • James • Victor • Ben • Altan • Max
+            Jon Cammisuli • James Henry • Victor Savkin • Ben Cabanes • Altan Stalker • Max Kless
           </p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
@@ -668,7 +668,7 @@ export default function EngWrapped() {
             </p>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Craigory • James • Leosvel • Jason
+            Craigory Coppola • James Henry • Leosvel Pérez • Jason Jean
           </p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
@@ -877,7 +877,7 @@ export default function EngWrapped() {
               Nx CLI
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Max • Jack</p>
+          <p className="text-zinc-500 text-sm mb-6">Max Kless • Jack Hsu</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -969,7 +969,7 @@ export default function EngWrapped() {
               Orca
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Chau</p>
+          <p className="text-zinc-500 text-sm mb-6">Chau Tran</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -1090,7 +1090,7 @@ export default function EngWrapped() {
             </div>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Jason • Altan • Leosvel • Craigory
+            Jason Jean • Altan Stalker • Leosvel Pérez • Craigory Coppola
           </p>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 bg-clip-text text-transparent"
@@ -1284,7 +1284,7 @@ export default function EngWrapped() {
             </p>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Craigory • Jason • Louie • Max
+            Craigory Coppola • Jason Jean • Louie Weng • Max Kless
           </p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
@@ -1371,7 +1371,7 @@ export default function EngWrapped() {
               Nx CLI
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Max</p>
+          <p className="text-zinc-500 text-sm mb-6">Max Kless</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -1524,7 +1524,7 @@ export default function EngWrapped() {
               </p>
             </div>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Leosvel • Chau • Louie</p>
+          <p className="text-zinc-500 text-sm mb-6">Leosvel Pérez • Chau Tran • Louie Weng</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -1625,7 +1625,7 @@ export default function EngWrapped() {
               Orca
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Dillon • Nicole • Louie</p>
+          <p className="text-zinc-500 text-sm mb-6">Dillon Chanis • Nicole Oliver • Louie Weng</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -1820,7 +1820,7 @@ export default function EngWrapped() {
             </p>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Nicole • Dillon • Mark • Chau
+            Nicole Oliver • Dillon Chanis • Mark Lindsey • Chau Tran
           </p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
@@ -1935,7 +1935,7 @@ export default function EngWrapped() {
               Orca
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Chau • Nicole</p>
+          <p className="text-zinc-500 text-sm mb-6">Chau Tran • Nicole Oliver</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2022,7 +2022,7 @@ export default function EngWrapped() {
               Infrastructure
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Steve</p>
+          <p className="text-zinc-500 text-sm mb-6">Steve Pentland</p>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2102,7 +2102,7 @@ export default function EngWrapped() {
               Infrastructure
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Szymon</p>
+          <p className="text-zinc-500 text-sm mb-6">Szymon Wojciechowski</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2215,7 +2215,7 @@ export default function EngWrapped() {
               Infrastructure
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Patrick • Steve</p>
+          <p className="text-zinc-500 text-sm mb-6">Patrick Mariglia • Steve Pentland</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2301,7 +2301,7 @@ export default function EngWrapped() {
               Nx CLI
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Colum • James</p>
+          <p className="text-zinc-500 text-sm mb-6">Colum Ferry • James Henry</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2401,7 +2401,7 @@ export default function EngWrapped() {
             </div>
           </div>
           <p className="text-zinc-500 text-sm mb-6">
-            Jack • Nicole • Colum • Dillon • Mark
+            Jack Hsu • Nicole Oliver • Colum Ferry • Dillon Chanis • Mark Lindsey
           </p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
@@ -2533,7 +2533,7 @@ export default function EngWrapped() {
               Nx CLI
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Jack</p>
+          <p className="text-zinc-500 text-sm mb-6">Jack Hsu</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2626,7 +2626,7 @@ export default function EngWrapped() {
               </p>
             </div>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Rares</p>
+          <p className="text-zinc-500 text-sm mb-6">Rares Matei</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2706,7 +2706,7 @@ export default function EngWrapped() {
               Documentation
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Jack • Caleb</p>
+          <p className="text-zinc-500 text-sm mb-6">Jack Hsu • Caleb Ukle</p>
           <h2
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
@@ -2826,7 +2826,7 @@ export default function EngWrapped() {
               Nx CLI
             </p>
           </div>
-          <p className="text-zinc-500 text-sm mb-6">Colum • Leosvel</p>
+          <p className="text-zinc-500 text-sm mb-6">Colum Ferry • Leosvel Pérez</p>
           <h2
             className="text-4xl font-bold mb-8 bg-clip-text text-transparent"
             style={{

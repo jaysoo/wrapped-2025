@@ -634,7 +634,7 @@ export const ProjectsShowcase = ({ isActive }) => {
 export const teamPhotos = [
   { name: 'Patrick Mariglia', photo: 'https://nx.dev/images/team/patrick-mariglia.avif' },
   { name: 'Steve Pentland', photo: 'https://nx.dev/images/team/steve-pentland.avif' },
-  { name: 'Szymon', photo: 'https://nx.dev/images/team/szymon-wojciechowski.avif' },
+  { name: 'Szymon Wojciechowski', photo: 'https://nx.dev/images/team/szymon-wojciechowski.avif' },
   { name: 'Louie Weng', photo: 'https://nx.dev/images/team/louie-weng.avif' },
   { name: 'Altan Stalker', photo: 'https://nx.dev/images/team/altan-stalker.avif' },
   { name: 'Max Kless', photo: 'https://nx.dev/images/team/max-kless.avif' },
@@ -651,7 +651,7 @@ export const teamPhotos = [
   { name: 'Victor Savkin', photo: 'https://nx.dev/images/team/victor-savkin.avif' },
   { name: 'Craigory Coppola', photo: 'https://nx.dev/images/team/craigory-coppola.avif' },
   { name: 'Nicole Oliver', photo: 'https://nx.dev/images/team/nicole-oliver.avif' },
-  { name: 'Dillon', photo: 'https://nx.dev/images/team/dillon-chanis.avif' },
+  { name: 'Dillon Chanis', photo: 'https://nx.dev/images/team/dillon-chanis.avif' },
   { name: 'Caleb Ukle', photo: 'https://nx.dev/images/team/caleb-ukle.avif' },
 ];
 
@@ -680,38 +680,8 @@ export const AnimatedNumber = ({ value, duration = 2000, isActive }) => {
   return <span>{current.toLocaleString()}</span>;
 };
 
-export const AnimatedTeamCount = ({ isActive }) => {
-  const [showHalf, setShowHalf] = useState(false);
-
-  useEffect(() => {
-    if (!isActive) {
-      setShowHalf(false);
-      return;
-    }
-
-    const halfTimer = setTimeout(() => {
-      setShowHalf(true);
-    }, 2000);
-
-    return () => clearTimeout(halfTimer);
-  }, [isActive]);
-
-  return (
-    <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
-      4
-      <span
-        style={{
-          opacity: showHalf ? 1 : 0,
-          transform: showHalf ? 'translateY(0) scale(1)' : 'translateY(10px) scale(0.5)',
-          transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
-          fontSize: '0.7em',
-          marginLeft: '2px',
-        }}
-      >
-        .5
-      </span>
-    </span>
-  );
+export const AnimatedTeamCount = () => {
+  return <span>5</span>;
 };
 
 export const Section = ({ children, className = '' }) => (

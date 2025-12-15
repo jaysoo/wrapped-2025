@@ -14,7 +14,7 @@ export function OrcaHighlights({ activeSection }) {
           <div className="w-3 h-3 rounded-full" style={{ backgroundColor: teamColors.cloud }} />
           <p className="text-zinc-300 uppercase tracking-wider text-sm">Orca</p>
         </div>
-        <p className="text-zinc-500 text-sm mb-6">Nicole • Chau • Louie • Dillon</p>
+        <p className="text-zinc-500 text-sm mb-6">Nicole Oliver • Chau Tran • Louie Weng • Dillon Chanis</p>
         <h2
           className="text-4xl font-bold mb-8 bg-clip-text text-transparent"
           style={{
@@ -55,7 +55,7 @@ export function InfraHighlights({ activeSection }) {
           <div className="w-3 h-3 rounded-full" style={{ backgroundColor: teamColors.infrastructure }} />
           <p className="text-zinc-300 uppercase tracking-wider text-sm">Infrastructure</p>
         </div>
-        <p className="text-zinc-500 text-sm mb-6">Steve • Patrick • Szymon</p>
+        <p className="text-zinc-500 text-sm mb-6">Steve Pentland • Patrick Mariglia • Szymon Wojciechowski</p>
         <h2
           className="text-4xl font-bold mb-8 bg-clip-text text-transparent"
           style={{
@@ -96,7 +96,7 @@ export function RedPandaHighlights({ activeSection }) {
           <div className="w-3 h-3 rounded-full" style={{ backgroundColor: teamColors.redpanda }} />
           <p className="text-zinc-300 uppercase tracking-wider text-sm">Red Panda</p>
         </div>
-        <p className="text-zinc-500 text-sm mb-6">Victor • Jon • James • Altan • Mark • Ben • Max</p>
+        <p className="text-zinc-500 text-sm mb-6">Victor Savkin • Jon Cammisuli • James Henry • Altan Stalker • Mark Lindsey • Ben Cabanes • Max Kless</p>
         <h2
           className="text-4xl font-bold mb-8 bg-clip-text text-transparent"
           style={{
